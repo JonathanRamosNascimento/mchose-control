@@ -4,8 +4,12 @@
 //! * [`protocol`] — the vendor HID protocol (pure, unit tested)
 //! * [`hidraw`] — Linux hidraw I/O and device discovery
 //! * [`device`] — synchronous handle and background monitor
+//! * [`dsp`] — EQ / effects / mic processing through PipeWire
+//! * [`config`] — persisted user settings
 
+pub mod config;
 pub mod device;
+pub mod dsp;
 pub mod hidraw;
 pub mod protocol;
 
