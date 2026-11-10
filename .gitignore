@@ -1,0 +1,16 @@
+# Rust
+/target
+**/*.rs.bk
+
+# Arch package build (makepkg em packaging/arch)
+/packaging/arch/src/
+/packaging/arch/pkg/
+/packaging/arch/*.pkg.tar*
+/packaging/arch/*.log
+
+# Editores e ferramentas
+*.swp
+*~
+.idea/
+.vscode/
+.playwright-mcp/
