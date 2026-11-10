@@ -1,0 +1,35 @@
+# Pacote local para Arch / CachyOS:  cd packaging/arch && makepkg -si
+pkgname=mchose-control
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Controle de headsets MCHOSE (V9 PRO, V9, G9 PRO, S9 PRO): bateria, modos, EQ e microfone limpo"
+arch=('x86_64' 'aarch64')
+license=('GPL-3.0-or-later')
+depends=('gtk4' 'libadwaita' 'pipewire' 'pipewire-audio' 'wireplumber' 'polkit')
+makedepends=('cargo' 'glib2')
+options=('!lto')
+
+_srcroot="$(realpath "$startdir/../..")"
+
+build() {
+    cd "$_srcroot"
+    export CARGO_TARGET_DIR="$srcdir/target"
+    cargo build --release --locked
+}
+
+check() {
+    cd "$_srcroot"
+    export CARGO_TARGET_DIR="$srcdir/target"
+    cargo test --release --locked -p mchose-core
+}
+
+package() {
+    cd "$_srcroot"
+    install -Dm755 "$srcdir/target/release/mchose"         "$pkgdir/usr/bin/mchose"
+    install -Dm755 "$srcdir/target/release/mchose-control" "$pkgdir/usr/bin/mchose-control"
+    install -Dm644 packaging/io.github.JonathanRamosNascimento.MchoseControl.desktop -t "$pkgdir/usr/share/applications/"
+    install -Dm644 crates/mchose-gui/data/icons/scalable/apps/io.github.JonathanRamosNascimento.MchoseControl.svg \
+                   -t "$pkgdir/usr/share/icons/hicolor/scalable/apps/"
+    install -Dm644 packaging/udev/70-mchose.rules -t "$pkgdir/usr/lib/udev/rules.d/"
+    install -Dm644 docs/PROTOCOL.md -t "$pkgdir/usr/share/doc/$pkgname/"
+}

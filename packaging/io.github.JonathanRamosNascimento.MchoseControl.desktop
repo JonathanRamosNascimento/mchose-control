@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=MCHOSE Control
+GenericName=Controle do headset
+Comment=Bateria, modos de som, equalizador e microfone limpo para headsets MCHOSE
+Exec=mchose-control
+Icon=io.github.JonathanRamosNascimento.MchoseControl
+Terminal=false
+Categories=AudioVideo;Audio;HardwareSettings;GTK;
+Keywords=headset;fone;equalizador;equalizer;eq;bateria;battery;mchose;microfone;
+StartupNotify=true
+SingleMainWindow=true
