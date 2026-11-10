@@ -1,0 +1,4 @@
+# MCHOSE headsets with the C-Media 2.4 GHz receiver (V9 PRO / V9 / G9 PRO / S9 PRO)
+# Grants the logged-in desktop user access to the vendor HID interface
+# (battery, sound mode, firmware info). No other permissions are changed.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="291d", ATTRS{idProduct}=="385d", TAG+="uaccess"
