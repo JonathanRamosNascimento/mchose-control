@@ -1,0 +1,23 @@
+[package]
+name = "mchose-gui"
+description = "MCHOSE Control — GTK4/libadwaita app for MCHOSE headsets"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "mchose-control"
+path = "src/main.rs"
+
+[dependencies]
+mchose-core.workspace = true
+log.workspace = true
+gtk = { package = "gtk4", version = "0.11", features = ["v4_18"] }
+adw = { package = "libadwaita", version = "0.9", features = ["v1_7"] }
+async-channel = "2"
+pangocairo = "0.22"
+
+[build-dependencies]
+glib-build-tools = "0.22"

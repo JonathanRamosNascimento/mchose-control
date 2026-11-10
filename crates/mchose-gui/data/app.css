@@ -1,0 +1,155 @@
+/* MCHOSE Control — visual layer on top of libadwaita.
+ * Everything derives from the system accent and libadwaita palette so the app
+ * follows light/dark mode and the user's accent colour automatically. */
+
+.hero {
+  border-radius: 24px;
+  padding: 24px;
+  background-image:
+    radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--accent-bg-color) 32%, transparent), transparent 62%),
+    linear-gradient(160deg, color-mix(in srgb, var(--accent-bg-color) 16%, transparent), color-mix(in srgb, var(--card-bg-color) 40%, transparent));
+  background-color: var(--card-bg-color);
+  box-shadow: 0 1px 3px color-mix(in srgb, black 12%, transparent), inset 0 1px color-mix(in srgb, white 5%, transparent);
+}
+
+.hero .product-name {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hero .brand {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  opacity: 0.6;
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 4px 12px 4px 10px;
+  font-weight: 600;
+  font-size: 13px;
+  background-color: color-mix(in srgb, currentColor 8%, transparent);
+}
+.status-pill .dot {
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 999px;
+  background-color: color-mix(in srgb, currentColor 50%, transparent);
+}
+.status-pill.ok { color: var(--success-color); background-color: color-mix(in srgb, var(--success-bg-color) 16%, transparent); }
+.status-pill.ok .dot { background-color: var(--success-color); box-shadow: 0 0 6px var(--success-color); }
+.status-pill.warn { color: var(--warning-color); background-color: color-mix(in srgb, var(--warning-bg-color) 16%, transparent); }
+.status-pill.warn .dot { background-color: var(--warning-color); }
+.status-pill.error { color: var(--error-color); background-color: color-mix(in srgb, var(--error-bg-color) 16%, transparent); }
+.status-pill.error .dot { background-color: var(--error-color); }
+
+.panel {
+  border-radius: 18px;
+  padding: 18px;
+  background-color: var(--card-bg-color);
+  box-shadow: 0 1px 3px color-mix(in srgb, black 10%, transparent), inset 0 1px color-mix(in srgb, white 4%, transparent);
+}
+
+.panel-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.big-number {
+  font-size: 34px;
+  font-weight: 800;
+  font-feature-settings: "tnum";
+  letter-spacing: -1px;
+}
+
+.numeric {
+  font-feature-settings: "tnum";
+}
+
+/* Sound mode tiles */
+button.mode-tile {
+  border-radius: 16px;
+  padding: 16px 10px 14px 10px;
+  background-color: color-mix(in srgb, currentColor 5%, transparent);
+  border: 2px solid transparent;
+  transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+button.mode-tile:hover { background-color: color-mix(in srgb, currentColor 9%, transparent); }
+button.mode-tile:checked,
+button.mode-tile.flat:checked {
+  background: color-mix(in srgb, var(--accent-bg-color) 22%, transparent);
+  border-color: var(--accent-bg-color);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent-bg-color) 35%, transparent);
+}
+button.mode-tile:checked image { color: var(--accent-color); }
+.mode-tile .mode-title { font-weight: 700; font-size: 15px; }
+.mode-tile .mode-sub { font-size: 12px; opacity: 0.65; }
+button.mode-tile:disabled { opacity: 0.45; }
+
+/* DSP master toggle in the header bar */
+button.dsp-toggle {
+  border-radius: 999px;
+  padding: 2px 12px 2px 8px;
+  font-weight: 700;
+}
+button.dsp-toggle:checked {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-fg-color);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-bg-color) 55%, transparent);
+}
+
+/* Equalizer */
+.eq-card {
+  border-radius: 20px;
+  padding: 14px 14px 6px 6px;
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--accent-bg-color) 7%, transparent), transparent 70%);
+  background-color: var(--card-bg-color);
+  box-shadow: 0 1px 3px color-mix(in srgb, black 10%, transparent), inset 0 1px color-mix(in srgb, white 4%, transparent);
+}
+
+.eq-band scale { min-height: 120px; }
+.eq-band scale trough { min-width: 4px; }
+.eq-band scale highlight { background-color: var(--accent-bg-color); }
+.eq-band .band-value {
+  font-feature-settings: "tnum";
+  font-size: 11px;
+  font-weight: 700;
+}
+.eq-band .band-freq {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+button.preset-chip {
+  border-radius: 999px;
+  padding: 4px 11px;
+  font-weight: 600;
+}
+button.preset-chip:checked,
+button.preset-chip.flat:checked {
+  background-color: color-mix(in srgb, var(--accent-bg-color) 25%, transparent);
+  color: var(--accent-color);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-bg-color) 60%, transparent);
+}
+
+.value-label {
+  font-feature-settings: "tnum";
+  font-weight: 600;
+  min-width: 48px;
+}
+
+.dim-strong { opacity: 0.55; }
+
+.hint-card {
+  border-radius: 14px;
+  padding: 12px 14px;
+  background-color: color-mix(in srgb, var(--accent-bg-color) 10%, transparent);
+}
+
+.graph-legend {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 0 0 6px 14px;
+}

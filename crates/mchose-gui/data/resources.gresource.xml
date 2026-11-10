@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/JonathanRamosNascimento/MchoseControl">
+    <file compressed="true">app.css</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/mchose-equalizer-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/mchose-waveform-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/mchose-sparkle-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/mchose-crosshair-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/mchose-music-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/mchose-power-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/apps/io.github.JonathanRamosNascimento.MchoseControl.svg</file>
+  </gresource>
+</gresources>
